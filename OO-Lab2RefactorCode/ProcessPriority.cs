@@ -1,17 +1,27 @@
 ﻿using System;
+using OO_Lab2RefactorCode.Interfaces;
+
 namespace OO_Lab2RefactorCode
 {
-    public class ProcessPriority
+    public class ProcessPriority : IProcessPriority
     {
-        public static void ProcessPriorityByValue(IOrder order)
+        private readonly ILogger _logger;
+       // private readonly IMessageService _messageService;
+
+        public ProcessPriority(ILogger logger)
         {
-            MessageService messageService = new MessageService(new EmailService());
+            _logger = logger;
+           
+        }
+        public void ProcessPriorityByValue(IOrder order)
+        {
+            MessageService messageService = new MessageService(new EmailService(Factory.CreateLogger()));
             messageService.SendMessage(order.Email,
                         "Your order has been shipped",
                         $"Your order with ID {order.ID} is expected to arrive within {GetOrderPriorities(order.Priority)}", order.ID
                         );
-            Logger logger = new Logger();
-            logger.Log($"Finished processing order with order {order.ID}");
+            //Logger logger = new Logger();
+            _logger.Log($"Finished processing order with order {order.ID}");
            /* switch (order.Priority)
             {
                 case Priority.Low:
@@ -46,7 +56,7 @@ namespace OO_Lab2RefactorCode
             }*/
         }
 
-        public static int GetOrderPriorities(Priority orderPriority)
+        public int GetOrderPriorities(Priority orderPriority)
         {
             switch (orderPriority)
             {
