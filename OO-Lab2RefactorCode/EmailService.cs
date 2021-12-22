@@ -11,8 +11,7 @@ namespace OO_Lab2RefactorCode
         {
             _logger = logger;
         }
-       // Logger logger = new Logger();
-
+       
 
         public void SendEmail(string recipient, string subject, string message, int orderID)
         {

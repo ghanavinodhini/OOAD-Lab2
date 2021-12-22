@@ -6,7 +6,7 @@ namespace OO_Lab2RefactorCode
     {
         static void Main(string[] args)
         {
-            //OrderService orderService = new OrderService();
+           
 
             IOrderService orderService = Factory.CreateOrderService();
             IOrder order = Factory.CreateOrder();
@@ -15,15 +15,6 @@ namespace OO_Lab2RefactorCode
             order.ID = 12321;
             order.Priority = Priority.SuperHigh;
             order.StreetAdress = "Some adress";
-
-            //dependency inversion
-            /* IOrder order = new Order
-             {
-                 Email = "example@example.com",
-                 ID = 12321,
-                 Priority = Priority.SuperHigh,
-                 StreetAdress = "Some adress"
-             };*/
 
             orderService.Process(order);
 
