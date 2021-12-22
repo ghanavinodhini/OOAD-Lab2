@@ -6,7 +6,27 @@ namespace OO_Lab2RefactorCode
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            OrderService orderService = new OrderService();
+
+            //dependency inversion
+            IOrder order = new Order
+            {
+                Email = "example@example.com",
+                ID = 12321,
+                Priority = Priority.SuperHigh,
+                StreetAdress = "Some adress"
+            };
+
+            orderService.Process(order);
+
+           /* orderService.Process(new Order
+            {
+                Email = "example@example.com",
+                ID = 12321,
+                Priority = Priority.SuperHigh,
+                StreetAdress = "Some adress"
+            });*/
+
         }
     }
 }

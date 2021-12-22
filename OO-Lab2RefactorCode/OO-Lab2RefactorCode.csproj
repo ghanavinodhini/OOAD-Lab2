@@ -6,4 +6,10 @@
     <RootNamespace>OO_Lab2RefactorCode</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
 </Project>
