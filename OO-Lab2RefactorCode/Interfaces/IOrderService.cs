@@ -2,6 +2,6 @@
 {
     public interface IOrderService
     {
-        void Process(IOrder order);
+        public void Process(IOrder order);
     }
 }

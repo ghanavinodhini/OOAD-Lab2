@@ -3,7 +3,7 @@ using OO_Lab2RefactorCode.Interfaces;
 
 namespace OO_Lab2RefactorCode
 {
-    public class EmailService : IMessageService
+    public class EmailService : IEmailService
     {
         private readonly ILogger _logger;
 

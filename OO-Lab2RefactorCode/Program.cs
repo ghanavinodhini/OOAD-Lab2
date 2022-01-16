@@ -8,23 +8,35 @@ namespace OO_Lab2RefactorCode
         {
            
 
-            IOrderService orderService = Factory.CreateOrderService();
-            IOrder order = Factory.CreateOrder();
+            IOrderService orderServiceHigh = Factory.CreateOrderServiceHighPriority();
+            IOrder orderHigh = Factory.CreateOrder();
 
-            order.Email = "example@example.com";
-            order.ID = 12321;
-            order.Priority = Priority.SuperHigh;
-            order.StreetAdress = "Some adress";
+            orderHigh.Email = "example@example.com";
+            orderHigh.ID = 12321;
+            orderHigh.Priority ="High";
+            orderHigh.StreetAdress = "Some adress";
 
-            orderService.Process(order);
+            orderServiceHigh.Process(orderHigh);
 
-           /* orderService.Process(new Order
-            {
-                Email = "example@example.com",
-                ID = 12321,
-                Priority = Priority.SuperHigh,
-                StreetAdress = "Some adress"
-            });*/
+            IOrderService orderServiceMedium = Factory.CreateOrderServiceMediumPriority();
+            IOrder orderMedium = Factory.CreateOrder();
+
+            orderMedium.Email = "sample@medium.com";
+            orderMedium.ID = 1211;
+            orderMedium.Priority = "Medium";
+            orderMedium.StreetAdress = "Some Address";
+
+            orderServiceMedium.Process(orderMedium);
+
+            IOrderService orderServiceLow = Factory.CreateOrderServiceLowPriority();
+            IOrder orderLow = Factory.CreateOrder();
+
+            orderLow.Email = "sample@low.com";
+            orderLow.ID = 1211;
+            orderLow.Priority = "Low";
+            orderLow.StreetAdress = "Some Address";
+
+            orderServiceLow.Process(orderLow);
 
         }
     }
