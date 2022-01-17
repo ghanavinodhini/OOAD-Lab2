@@ -14,7 +14,7 @@ namespace OO_Lab2RefactorCode
             _processPriority = processPriority;
         }
 
-        public void Process(IOrder order)
+        public void ProcessPriorityLevel(IOrder order)
         {
             _logger.Log($"Started processing order {order.ID}");
 

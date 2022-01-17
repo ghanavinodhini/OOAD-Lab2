@@ -16,7 +16,7 @@ namespace OO_Lab2RefactorCode
             orderHigh.Priority ="High";
             orderHigh.StreetAdress = "Some adress";
 
-            orderServiceHigh.Process(orderHigh);
+            orderServiceHigh.ProcessPriorityLevel(orderHigh);
 
             IOrderService orderServiceMedium = Factory.CreateOrderServiceMediumPriority();
             IOrder orderMedium = Factory.CreateOrder();
@@ -26,7 +26,7 @@ namespace OO_Lab2RefactorCode
             orderMedium.Priority = "Medium";
             orderMedium.StreetAdress = "Some Address";
 
-            orderServiceMedium.Process(orderMedium);
+            orderServiceMedium.ProcessPriorityLevel(orderMedium);
 
             IOrderService orderServiceLow = Factory.CreateOrderServiceLowPriority();
             IOrder orderLow = Factory.CreateOrder();
@@ -36,7 +36,7 @@ namespace OO_Lab2RefactorCode
             orderLow.Priority = "Low";
             orderLow.StreetAdress = "Some Address";
 
-            orderServiceLow.Process(orderLow);
+            orderServiceLow.ProcessPriorityLevel(orderLow);
 
 
             IOrderService orderServiceSuperHigh = Factory.CreateOrderServiceSuperHighPriority();
@@ -47,7 +47,7 @@ namespace OO_Lab2RefactorCode
             orderSuperHigh.Priority = "SuperHigh";
             orderSuperHigh.StreetAdress = "Some Address";
 
-            orderServiceSuperHigh.Process(orderSuperHigh);
+            orderServiceSuperHigh.ProcessPriorityLevel(orderSuperHigh);
         }
     }
 }

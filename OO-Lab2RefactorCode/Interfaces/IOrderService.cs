@@ -2,6 +2,6 @@
 {
     public interface IOrderService
     {
-        public void Process(IOrder order);
+        public void ProcessPriorityLevel(IOrder order);
     }
 }
