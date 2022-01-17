@@ -38,6 +38,16 @@ namespace OO_Lab2RefactorCode
 
             orderServiceLow.Process(orderLow);
 
+
+            IOrderService orderServiceSuperHigh = Factory.CreateOrderServiceSuperHighPriority();
+            IOrder orderSuperHigh = Factory.CreateOrder();
+
+            orderSuperHigh.Email = "sample@superHigh.com";
+            orderSuperHigh.ID = 1211;
+            orderSuperHigh.Priority = "SuperHigh";
+            orderSuperHigh.StreetAdress = "Some Address";
+
+            orderServiceSuperHigh.Process(orderSuperHigh);
         }
     }
 }

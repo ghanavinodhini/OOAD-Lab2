@@ -25,6 +25,11 @@ namespace OO_Lab2RefactorCode
             return new OrderServiceHighPriority(CreateLogger(), CreateProcessPriority());
         }
 
+        public static IOrderService CreateOrderServiceSuperHighPriority()
+        {
+            return new OrderServiceSuperHighPriority(CreateLogger(), CreateProcessPriority());
+        }
+
         public static IEmailService CreateEmailService()
         {
             return new EmailService(CreateLogger());
